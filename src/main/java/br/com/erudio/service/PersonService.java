@@ -1,6 +1,7 @@
 package br.com.erudio.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 import org.springframework.stereotype.Service;
@@ -39,6 +40,10 @@ public class PersonService {
 
 		logger.info("Creating one person!");
 
+		Optional<Person> savedPerson = repository.findByEmail(person.getEmail());
+		if (savedPerson.isPresent()) {
+			throw new ResourceNotFoundException("Person already exist with given e-Mail: " + person.getEmail());
+		}
 		return repository.save(person);
 	}
 
