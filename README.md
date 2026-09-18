@@ -66,8 +66,8 @@ As adaptações relevantes identificadas durante o desenvolvimento estão docume
 * [x] Mockito
 * [x] BDD (Behaviour Driven Development)
 * [x] Testes de Repository
-* [ ] Testes de Service
-* [ ] Testes de Controller
+* [x] Testes de Service
+* [x] Testes de Controller
 * [ ] Testes de APIs REST
 * [ ] Testes de integração
 * [ ] REST Assured
