@@ -51,9 +51,12 @@ Embora o curso utilize versões específicas das tecnologias apresentadas nas au
 
 O conteúdo do curso é baseado em **Spring Boot 3**, enquanto este projeto utiliza **Spring Boot 4** e **Java 25**.
 
-Por esse motivo, algumas configurações, APIs, dependências ou práticas apresentadas durante as aulas podem apresentar diferenças em relação à implementação utilizada neste projeto.
+Por esse motivo, algumas configurações, APIs, dependências e imports apresentados durante as aulas precisam ser adaptados para as versões utilizadas neste projeto.
 
-Quando necessário, as diferenças e adaptações relevantes serão documentadas neste README ou na documentação específica dentro da pasta `docs`.
+As adaptações relevantes identificadas durante o desenvolvimento estão documentadas em:
+
+[Spring Boot 4 — Adaptações e Migração](docs/spring-boot-4-migration.md)
+
 
 ## Conteúdos Praticados
 
@@ -135,6 +138,7 @@ Documentações específicas do projeto serão armazenadas na pasta `docs`.
 ```text
 docs/
 ├── mysql.md
+├── spring-boot-4-migration.md
 └── ...
 ```
 
@@ -148,8 +152,8 @@ Este projeto será desenvolvido progressivamente conforme os conteúdos do curso
 * [x] Integração com Spring Data JPA
 * [x] Primeiros testes com JUnit 5
 * [x] Testes com Mockito
-* [ ] Testes de Service
-* [ ] Testes de Controller
+* [x] Testes de Service
+* [x] Testes de Controller
 * [ ] Testes de integração
 * [ ] Testcontainers
 * [ ] Docker
