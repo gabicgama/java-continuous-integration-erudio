@@ -12,11 +12,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
+import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase;
+import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase.Replace;
 
+import br.com.erudio.integrationtests.testcontainers.AbstractIntegrationTest;
 import br.com.erudio.model.Person;
 
 @DataJpaTest
-class PersonRepositoryTest {
+@AutoConfigureTestDatabase(replace = Replace.NONE)
+class PersonRepositoryTest extends AbstractIntegrationTest {
 
 	@Autowired
 	private PersonRepository repository;

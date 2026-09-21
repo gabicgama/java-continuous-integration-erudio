@@ -66,8 +66,8 @@ As adaptações relevantes identificadas durante o desenvolvimento estão docume
 * [x] Mockito
 * [x] BDD (Behaviour Driven Development)
 * [x] Testes de Repository
-* [ ] Testes de Service
-* [ ] Testes de Controller
+* [x] Testes de Service
+* [x] Testes de Controller
 * [ ] Testes de APIs REST
 * [ ] Testes de integração
 * [ ] REST Assured
@@ -76,10 +76,10 @@ As adaptações relevantes identificadas durante o desenvolvimento estão docume
 
 ### Docker
 
-* [ ] Conceitos básicos de Docker
-* [ ] Dockerfile
-* [ ] Docker Compose
-* [ ] Containerização da aplicação
+* [x] Conceitos básicos de Docker
+* [x] Dockerfile
+* [x] Docker Compose
+* [x] Containerização da aplicação
 * [ ] Integração da aplicação com containers
 
 ### CI/CD
@@ -137,6 +137,7 @@ Documentações específicas do projeto serão armazenadas na pasta `docs`.
 
 ```text
 docs/
+├── docker.md
 ├── mysql.md
 ├── spring-boot-4-migration.md
 └── ...
@@ -156,7 +157,8 @@ Este projeto será desenvolvido progressivamente conforme os conteúdos do curso
 * [x] Testes de Controller
 * [ ] Testes de integração
 * [ ] Testcontainers
-* [ ] Docker
+* [x] Docker
+* [ ] Docker Compose
 * [ ] GitHub Actions
 * [ ] CI/CD
 * [ ] AWS

@@ -165,18 +165,86 @@ class PersonControllerTest {
 
 Essa combinação é apresentada na documentação do Spring Boot 4 para testes de controllers com `@WebMvcTest`.
 
+## 5. Testcontainers 2.x — `MySQLContainer`
+
+O curso utiliza uma versão anterior do Testcontainers, na qual o `MySQLContainer` estava no pacote `org.testcontainers.containers` e era uma classe genérica.
+
+Com o Testcontainers 2.x, utilizado neste projeto, foram necessárias as seguintes adaptações:
+
+* Adição da dependência específica do MySQL:
+
+  ```xml
+  <dependency>
+      <groupId>org.testcontainers</groupId>
+      <artifactId>testcontainers-mysql</artifactId>
+      <scope>test</scope>
+  </dependency>
+  ```
+
+* Atualização do import:
+
+  ```java
+  import org.testcontainers.mysql.MySQLContainer;
+  ```
+
+* Remoção do parâmetro genérico `<?>`, pois `MySQLContainer` não é mais uma classe genérica:
+
+  ```java
+  static final MySQLContainer mysql =
+      new MySQLContainer("mysql:8.4");
+  ```
+
+A versão do Testcontainers é gerenciada pelo Spring Boot, portanto não é necessário declarar manualmente a versão no `pom.xml`.
+
+## 5.5 Testcontainers
+
+Durante a adaptação do projeto para versões mais recentes do Spring Boot e do Testcontainers, foi identificada uma mudança importante na forma de integração entre os frameworks.
+
+O curso utiliza uma abordagem manual baseada em `ApplicationContextInitializer`, na qual o container é iniciado explicitamente e as propriedades de conexão (`URL`, usuário e senha) são registradas manualmente no `Environment` do Spring.
+
+No projeto atual, foi adotada a abordagem mais moderna utilizando `@ServiceConnection`, na qual o Spring Boot reconhece o container e configura automaticamente as informações necessárias para a conexão com o banco de dados. O próprio Spring Boot recomenda `@ServiceConnection` quando existe suporte para o serviço utilizado.
+
+### Abordagens documentadas
+
+| Abordagem                                                                                 | Descrição                                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [Testcontainers — Abordagem Manual](./testing/testcontainers-manual-approach.md)     | Implementação utilizada pelo curso com `ApplicationContextInitializer`, `Startables` e `MapPropertySource`. |
+| [Testcontainers — Abordagem Moderna](./testing/testcontainers-service-connection.md) | Implementação atual utilizando `@Testcontainers`, `@Container` e `@ServiceConnection`.                      |
+
+### Implementação atual
+
+A integração utilizada neste projeto é baseada em:
+
+```java
+@Testcontainers
+@SpringBootTest
+public abstract class AbstractIntegrationTest {
+
+    @Container
+    @ServiceConnection
+    static final MySQLContainer mysql =
+            new MySQLContainer("mysql:8.4");
+}
+```
+
+Essa abordagem elimina a necessidade de implementar manualmente o `ApplicationContextInitializer`, iniciar o container através de `Startables` e registrar as propriedades do `DataSource` através de `MapPropertySource`.
+
+Para uma explicação detalhada de cada abordagem e das diferenças entre elas, consulte os documentos acima.
+
+
 ---
 
 ## Resumo das adaptações
 
-| Item              | Curso / Spring Boot 3                       | Projeto / Spring Boot 4                                         |
-| ----------------- | ------------------------------------------- | --------------------------------------------------------------- |
-| Dialeto Hibernate | Configuração explícita apresentada no curso | Dialeto detectado automaticamente                               |
-| `ddl-auto`        | Utilizado conforme configuração do projeto  | `update`                                                        |
-| Testes JPA        | Dependências do curso                       | `spring-boot-starter-data-jpa-test`                             |
-| Mock de beans     | `@MockBean`                                 | `@MockitoBean`                                                  |
-| Testes MVC        | Dependências do curso                       | `spring-boot-starter-webmvc-test`                               |
-| `@WebMvcTest`     | Package utilizado no curso                  | `org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest` |
+| Item                              | Curso / Spring Boot 3                                                                 | Projeto / Spring Boot 4                                                                                              |
+| --------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Dialeto Hibernate                 | Configuração explícita apresentada no curso                                           | Dialeto detectado automaticamente                                                                                    |
+| `ddl-auto`                        | Utilizado conforme configuração do projeto                                            | `update`                                                                                                             |
+| Testes JPA                        | Dependências do curso                                                                 | `spring-boot-starter-data-jpa-test`                                                                                  |
+| Mock de beans                     | `@MockBean`                                                                           | `@MockitoBean`                                                                                                       |
+| Testes MVC                        | Dependências do curso                                                                 | `spring-boot-starter-webmvc-test`                                                                                    |
+| `@WebMvcTest`                     | Package utilizado no curso                                                            | `org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest`                                                      |
+| Testcontainers / `MySQLContainer` | `MySQLContainer` no package `org.testcontainers.containers`, utilizando tipo genérico | `MySQLContainer` no package `org.testcontainers.mysql`, sem tipo genérico e com a dependência `testcontainers-mysql` |
 
 ---
 
