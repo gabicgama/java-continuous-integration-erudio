@@ -158,7 +158,7 @@ Este projeto será desenvolvido progressivamente conforme os conteúdos do curso
 * [x] Testes de integração
 * [x] Testcontainers
 * [x] Docker
-* [ ] Docker Compose
+* [x] Docker Compose
 * [ ] GitHub Actions
 * [ ] CI/CD
 * [ ] AWS
