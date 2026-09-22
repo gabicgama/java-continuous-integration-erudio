@@ -55,7 +55,7 @@ Por esse motivo, algumas configurações, APIs, dependências e imports apresent
 
 As adaptações relevantes identificadas durante o desenvolvimento estão documentadas em:
 
-[Spring Boot 4 — Adaptações e Migração](docs/spring-boot-4-migration.md)
+[Spring Boot 4 — Adaptações e Migração](rest-with-spring-boot-erudio/docs/spring-boot-4-migration.md)
 
 
 ## Conteúdos Praticados
@@ -117,7 +117,7 @@ A aplicação utiliza **MySQL**.
 
 As instruções para configuração do banco de dados utilizando Docker estão documentadas em:
 
-[Configuração do MySQL](docs/mysql.md)
+[Configuração do MySQL](rest-with-spring-boot-erudio/docs/mysql.md)
 
 ## Executando o Projeto
 
