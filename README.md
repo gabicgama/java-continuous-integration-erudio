@@ -68,11 +68,11 @@ As adaptações relevantes identificadas durante o desenvolvimento estão docume
 * [x] Testes de Repository
 * [x] Testes de Service
 * [x] Testes de Controller
-* [ ] Testes de APIs REST
-* [ ] Testes de integração
-* [ ] REST Assured
-* [ ] Testcontainers
-* [ ] MySQL com Testcontainers
+* [x] Testes de APIs REST
+* [x] Testes de integração
+* [x] REST Assured
+* [x] Testcontainers
+* [x] MySQL com Testcontainers
 
 ### Docker
 
@@ -155,8 +155,8 @@ Este projeto será desenvolvido progressivamente conforme os conteúdos do curso
 * [x] Testes com Mockito
 * [x] Testes de Service
 * [x] Testes de Controller
-* [ ] Testes de integração
-* [ ] Testcontainers
+* [x] Testes de integração
+* [x] Testcontainers
 * [x] Docker
 * [ ] Docker Compose
 * [ ] GitHub Actions
