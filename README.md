@@ -1,181 +1,163 @@
-# Projeto — Integração e Entrega Contínuas
+# Java Continuous Integration & Delivery — Erudio
 
-Projeto desenvolvido durante meus estudos do curso **"Java Continuous Integration-Delivery c. AWS e Github Actions"**.
+Repositório utilizado para acompanhar meus estudos do curso **[Java Continuous Integration-Delivery com AWS e GitHub Actions](https://www.udemy.com/course/java-continuous-integration-continuous-delivery-aws-e-github-actions/)**.
 
-O projeto tem como objetivo aplicar, de forma prática, conceitos relacionados a **testes automatizados, integração contínua, entrega contínua, Docker e serviços de cloud**, utilizando uma aplicação desenvolvida com Java e Spring Boot.
+O objetivo é aplicar, de forma prática, conceitos relacionados a **testes automatizados, integração contínua, entrega contínua, Docker, GitHub Actions e serviços da AWS**, utilizando aplicações desenvolvidas com Java e Spring Boot.
 
-## Sobre o Curso
+O repositório também contém adaptações do projeto original do curso para versões mais recentes do Java e do Spring Boot, permitindo comparar o ambiente utilizado nas aulas com versões atuais das tecnologias.
 
-O curso possui uma abordagem predominantemente prática e aborda conceitos como:
+## Sobre o curso
 
-* Testes unitários com JUnit 5 e Mockito
-* Desenvolvimento de testes utilizando BDD (Behaviour Driven Development)
-* Testes da camada de Repository
-* Testes da camada de Service
-* Testes de Controllers e APIs REST
-* Testes de integração com Spring Boot
-* Testcontainers
-* Testes de integração utilizando MySQL
-* REST Assured
-* Docker
-* Docker Compose
-* GitHub Actions
-* Integração e entrega contínuas (CI/CD)
-* Amazon AWS
-* RDS
-* EC2
-* IAM
-* ECS
-* Deploy de aplicações na nuvem
-
-## Tecnologias e Versões
-
-Embora o curso utilize versões específicas das tecnologias apresentadas nas aulas, este projeto está sendo desenvolvido utilizando versões mais recentes sempre que possível.
-
-| Tecnologia     | Versão utilizada                  |
-| -------------- | --------------------------------- |
-| Java           | 25                                |
-| Spring Boot    | 4.x                               |
-| Maven          | Versão mais recente               |
-| JUnit          | 5                                 |
-| Mockito        | Versão gerenciada pelo projeto    |
-| MySQL          | Conforme configuração do ambiente |
-| Docker         | Versão instalada no ambiente      |
-| Git            | Versão instalada no ambiente      |
-| GitHub Actions | —                                 |
-| AWS            | —                                 |
-
-> As versões podem ser atualizadas ao longo do desenvolvimento do projeto.
-
-## Adaptações em Relação ao Curso
-
-O conteúdo do curso é baseado em **Spring Boot 3**, enquanto este projeto utiliza **Spring Boot 4** e **Java 25**.
-
-Por esse motivo, algumas configurações, APIs, dependências e imports apresentados durante as aulas precisam ser adaptados para as versões utilizadas neste projeto.
-
-As adaptações relevantes identificadas durante o desenvolvimento estão documentadas em:
-
-[Spring Boot 4 — Adaptações e Migração](rest-with-spring-boot-erudio/docs/spring-boot-4-migration.md)
-
-
-## Conteúdos Praticados
+O curso possui uma abordagem predominantemente prática e aborda conteúdos como:
 
 ### Testes
 
-* [x] JUnit 5
-* [x] Mockito
-* [x] BDD (Behaviour Driven Development)
-* [x] Testes de Repository
-* [x] Testes de Service
-* [x] Testes de Controller
-* [x] Testes de APIs REST
-* [x] Testes de integração
-* [x] REST Assured
-* [x] Testcontainers
-* [x] MySQL com Testcontainers
+* JUnit 5
+* Mockito
+* BDD (Behaviour Driven Development)
+* Testes de Repository
+* Testes de Service
+* Testes de Controller
+* Testes de APIs REST
+* Testes de integração
+* Testcontainers
+* MySQL com Testcontainers
+* REST Assured
 
 ### Docker
 
-* [x] Conceitos básicos de Docker
-* [x] Dockerfile
-* [x] Docker Compose
-* [x] Containerização da aplicação
-* [ ] Integração da aplicação com containers
+* Conceitos de Docker
+* Dockerfile
+* Docker Compose
+* Containerização de aplicações
+* Docker Images
+* Docker Hub
 
 ### CI/CD
 
-* [ ] Git
-* [ ] GitHub Actions
-* [ ] Integração Contínua (CI)
-* [ ] Entrega Contínua (CD)
-* [ ] Build automatizado
-* [ ] Execução automatizada de testes
-* [ ] Criação de imagens Docker
-* [ ] Deploy automatizado
+* GitHub Actions
+* Integração Contínua (CI)
+* Entrega Contínua (CD)
+* Build automatizado
+* Execução automatizada de testes
+* Criação e publicação de Docker Images
 
 ### AWS
 
-* [ ] IAM
-* [ ] RDS
-* [ ] EC2
-* [ ] ECS
-* [ ] Deploy da aplicação na AWS
+* IAM
+* RDS
+* EC2
+* ECS
+* Deploy de aplicações na AWS
 
-## Configuração do Ambiente
+## Estrutura do repositório
 
-### Pré-requisitos
-
-* Java 25
-* Maven
-* Docker
-* Git
-* Conta na AWS, quando necessário
-
-### Banco de Dados
-
-A aplicação utiliza **MySQL**.
-
-As instruções para configuração do banco de dados utilizando Docker estão documentadas em:
-
-[Configuração do MySQL](rest-with-spring-boot-erudio/docs/mysql.md)
-
-## Executando o Projeto
-
-As instruções para executar a aplicação serão documentadas conforme o projeto evoluir.
-
-## Executando os Testes
-
-Para executar os testes automatizados:
-
-```bash
-mvn test
-```
-
-## Documentação
-
-Documentações específicas do projeto serão armazenadas na pasta `docs`.
+O repositório está dividido em projetos e materiais relacionados às diferentes etapas do estudo.
 
 ```text
-docs/
-├── docker.md
-├── mysql.md
-├── spring-boot-4-migration.md
-└── ...
+java-continuous-integration-erudio/
+│
+├── README.md
+│
+├── dockerizing/
+│   └── README.md
+│
+├── rest-with-spring-boot-erudio/
+│   └── README.md
+│
+└── teste-unitarios/
 ```
+
+### `dockerizing/`
+
+Contém o projeto baseado no **ambiente original utilizado no curso**, mantendo **Java 19 e Spring Boot 3.0.1**.
+
+É a aplicação utilizada como base para os estudos da seção de **Dockerização da Aplicação**, incluindo Dockerfile, Docker Compose, Docker Hub e GitHub Actions.
+
+A aplicação possui testes unitários e testes de integração e será posteriormente utilizada para gerar uma Docker Image e publicá-la no Docker Hub.
+
+Mais informações:
+
+[Dockerizing — README](dockerizing/README.md)
+
+### `rest-with-spring-boot-erudio/`
+
+Contém uma versão do projeto adaptada para tecnologias mais recentes, utilizando **Java 25 e Spring Boot 4**.
+
+Durante o desenvolvimento foram necessárias diversas adaptações em relação ao código apresentado no curso, principalmente devido às mudanças entre Spring Boot 3 e Spring Boot 4.
+
+As alterações e problemas encontrados durante essa atualização são documentados no próprio projeto.
+
+Mais informações:
+
+[REST with Spring Boot and Java — README](rest-with-spring-boot-erudio/README.md)
+
+### `teste-unitarios/`
+
+Diretório destinado aos estudos e exercícios relacionados especificamente a **testes unitários**.
+
+Atualmente não possui documentação própria.
+
+## Tecnologias estudadas
+
+As principais tecnologias e ferramentas abordadas neste repositório são:
+
+| Tecnologia     | Conteúdo                         |
+| -------------- | -------------------------------- |
+| Java           | Desenvolvimento backend          |
+| Spring Boot    | Desenvolvimento de APIs REST     |
+| JUnit 5        | Testes automatizados             |
+| Mockito        | Testes unitários e mocks         |
+| Testcontainers | Testes de integração             |
+| REST Assured   | Testes de APIs REST              |
+| MySQL          | Banco de dados                   |
+| Docker         | Containerização                  |
+| Docker Compose | Orquestração local de containers |
+| Docker Hub     | Armazenamento de Docker Images   |
+| GitHub Actions | Integração Contínua              |
+| AWS            | Cloud Computing e deploy         |
+
+As versões das tecnologias podem variar entre os projetos. As versões específicas estão documentadas no README de cada projeto.
+
+## Objetivo dos estudos
+
+Além de acompanhar o conteúdo do curso, este repositório tem como objetivo consolidar conhecimentos práticos sobre:
+
+* Desenvolvimento backend com Java e Spring Boot;
+* Testes unitários e de integração;
+* Testcontainers;
+* Docker e containerização;
+* Docker Compose;
+* Docker Hub;
+* GitHub Actions;
+* CI/CD;
+* Cloud Computing;
+* Amazon AWS.
+
+Também faz parte do objetivo entender as diferenças e adaptações necessárias ao utilizar versões mais recentes das tecnologias apresentadas no curso.
 
 ## Progresso
 
-Este projeto será desenvolvido progressivamente conforme os conteúdos do curso forem estudados e implementados.
+O estudo será desenvolvido progressivamente conforme os conteúdos do curso forem estudados e implementados.
 
-* [x] Configuração inicial do projeto
+* [x] Configuração inicial dos projetos
 * [x] Configuração do Maven
 * [x] Configuração do MySQL
-* [x] Integração com Spring Data JPA
-* [x] Primeiros testes com JUnit 5
-* [x] Testes com Mockito
+* [x] Spring Data JPA
+* [x] JUnit 5
+* [x] Mockito
 * [x] Testes de Service
 * [x] Testes de Controller
 * [x] Testes de integração
 * [x] Testcontainers
+* [x] REST Assured
 * [x] Docker
 * [x] Docker Compose
+* [ ] Docker Hub
 * [ ] GitHub Actions
 * [ ] CI/CD
 * [ ] AWS
 * [ ] Deploy
-
-## Objetivo de Aprendizado
-
-Além de acompanhar o conteúdo do curso, este projeto tem como objetivo consolidar conhecimentos práticos sobre:
-
-* Desenvolvimento backend com Java e Spring Boot
-* Testes automatizados
-* Testes unitários e de integração
-* Docker e containerização
-* CI/CD
-* GitHub Actions
-* Cloud Computing
-* Amazon AWS
 
 ## Autor
 
