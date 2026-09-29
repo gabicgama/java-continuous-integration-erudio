@@ -153,11 +153,11 @@ O estudo será desenvolvido progressivamente conforme os conteúdos do curso for
 * [x] REST Assured
 * [x] Docker
 * [x] Docker Compose
-* [ ] Docker Hub
-* [ ] GitHub Actions
-* [ ] CI/CD
-* [ ] AWS
-* [ ] Deploy
+* [x] Docker Hub
+* [x] GitHub Actions
+* [x] CI/CD
+* [x] AWS
+* [x] Deploy
 
 ## Autor
 
