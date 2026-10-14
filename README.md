@@ -47,7 +47,7 @@ O curso possui uma abordagem predominantemente prática e aborda conteúdos como
 * IAM
 * RDS
 * EC2
-* ECS
+* ECR
 * Deploy de aplicações na AWS
 
 ## Estrutura do repositório
